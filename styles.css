@@ -1,0 +1,768 @@
+/* VARIABLES CORPORATIVAS (Confianza, Limpieza y Logística) */
+:root {
+    --color-primary: #0F2C59;       /* Azul Naval Profundo (Confianza y Estabilidad) */
+    --color-primary-light: #1A3E75; /* Azul Secundario */
+    --color-accent: #E86A33;        /* Naranja Industrial (Movimiento, Logística y Distribución) */
+    --bg-light: #F8F9FA;            /* Fondo Limpio y Claro */
+    --bg-white: #FFFFFF;
+    --border-color: #E2E8F0;
+    --text-main: #1E293B;           /* Gris Oscuro Profesional */
+    --text-muted: #64748B;          /* Gris de Soporte */
+    --fuente-titulos: 'Montserrat', sans-serif;
+    --fuente-base: 'Inter', sans-serif;
+}
+
+/* RESET GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    font-family: var(--fuente-base);
+    line-height: 1.6;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: var(--bg-white);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+    font-family: var(--fuente-titulos);
+    font-weight: 800;
+    font-size: 22px;
+    color: var(--color-primary);
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: var(--color-accent);
+}
+
+nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    margin-left: 24px;
+    font-weight: 500;
+    font-size: 15px;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: var(--color-primary);
+}
+
+.btn-nav {
+    border: 2px solid var(--color-primary);
+    padding: 6px 16px;
+    border-radius: 4px;
+    color: var(--color-primary) !important;
+    font-weight: 600;
+}
+
+.btn-nav:hover {
+    background-color: var(--color-primary);
+    color: var(--bg-white) !important;
+}
+
+/* HERO SECTION CORREGIDO (IMAGEN LOCAL) */
+.hero {
+    height: 85vh;
+    /* Cambiamos el link largo de internet por tu carpeta local */
+    background: url('imagenes/deposito-logistica.jpeg') no-repeat center center/cover; 
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0 5%;
+    margin-top: 60px;
+}
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(15, 44, 89, 0.9) 0%, rgba(15, 44, 89, 0.5) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 750px;
+    color: var(--bg-white);
+    text-align: left;
+}
+
+.tagline {
+    color: var(--color-accent);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.hero-content h1 {
+    font-family: var(--fuente-titulos);
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.accent-text {
+    color: var(--color-primary); /* Usa tu azul corporativo oscuro para resaltar en fondo blanco */
+    font-weight: 800;
+    border-bottom: none; /* 🚫 Chau subrayado */
+    text-decoration: none !important;
+}
+
+.info-card-full, 
+.whatsapp-card-full,
+h2 .accent-text {
+    text-decoration: none !important;
+}
+.hero-content .accent-text {
+    color: var(--bg-white); /* En el Hero sí se queda blanco para contrastar con el fondo oscuro */
+    border-bottom: 3px solid var(--color-accent); /* Mantiene la línea decorativa SOLO en el Hero si te gusta cómo queda ahí */
+}
+
+.hero-content p {
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 35px;
+}
+
+/* BOTONES CORPORATIVOS */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 15px;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--color-accent);
+    color: var(--bg-white);
+}
+
+.btn-primary:hover {
+    background-color: #d15622;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--bg-white);
+    color: var(--bg-white);
+}
+
+.btn-secondary:hover {
+    background-color: var(--bg-white);
+    color: var(--color-primary);
+}
+
+/* PILARES ESTRATÉGICOS */
+.pilares {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 50px 5%;
+    background-color: var(--bg-white);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    flex-wrap: wrap;
+}
+
+.pilar-item {
+    flex: 1;
+    min-width: 250px;
+    text-align: left;
+    padding: 10px;
+}
+
+.pilar-item .icon {
+    font-size: 28px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.pilar-item h3 {
+    font-family: var(--fuente-titulos);
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: var(--color-primary);
+}
+
+.pilar-item p {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+/* DISEÑO SECCIONES REUTILIZABLES */
+.soluciones-section, .catalogo-section, .cotizacion-section {
+    padding: 80px 5%;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 50px auto;
+}
+
+.section-header h2 {
+    font-family: var(--fuente-titulos);
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.section-header p {
+    color: var(--text-muted);
+}
+
+/* ===================================================
+   TARJETAS DE SOLUCIONES (DIMENSIONES IGUAL A LA VITRINA)
+   =================================================== */
+
+.soluciones-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+
+/* Tarjeta con dimensiones idénticas a la vitrina (.vitrina-item) */
+.solucion-card {
+    position: relative;
+    width: 280px;               /* Ancho exacto de las tarjetas de la vitrina */
+    min-height: 380px;          /* Altura uniforme asegurada */
+    border-radius: 8px;         /* Mismo suavizado de esquinas */
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra base idéntica */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* Flexbox interno para centrar el contenido verticalmente si es necesario */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+/* Clases de Fondos (Se mantienen igual) */
+.solucion-card.bg-solucion-minoristas {
+    background-image: url('imagenes/solucion-minoristas.jpg');
+}
+
+.solucion-card.bg-solucion-gastronomicos {
+    background-image: url('imagenes/solucion-gastronomicos.jpg');
+}
+
+.solucion-card.bg-solucion-empresas {
+    background-image: url('imagenes/solucion-empresas.jpg');
+}
+
+/* Capa traslúcida (Mismo comportamiento de números/traslucidez anterior) */
+.solucion-blur-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 44, 89, 0.55); /* Ajustado al 0.55 original de tu vitrina */
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    z-index: 1;
+}
+
+/* Contenedor de contenido alineado */
+.solucion-content {
+    position: relative;
+    z-index: 2;
+    padding: 30px 20px; /* Ajuste de padding interno para el ancho de 280px */
+    text-align: center;
+    color: var(--bg-white);
+}
+
+/* Efecto Hover idéntico al de la vitrina */
+.solucion-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(15, 44, 89, 0.25);
+}
+
+/* Iconos de las tarjetas */
+.card-icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+/* Textos adaptados para que no se desborden en los 280px */
+.solucion-card h3 {
+    color: var(--bg-white);
+    font-family: var(--fuente-titulos);
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.solucion-card p {
+    font-size: 14px;
+    color: #f1f5f9;
+    line-height: 1.45;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* LISTA DE PRECIOS / TABLA */
+.buscador-container {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.buscador-container input {
+    width: 100%;
+    max-width: 450px;
+    padding: 12px 20px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-white);
+    border-radius: 4px;
+    color: var(--text-main);
+    outline: none;
+    font-size: 15px;
+}
+
+.buscador-container input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(15, 44, 89, 0.1);
+}
+
+.tabla-wrapper {
+    overflow-x: auto;
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: var(--bg-white);
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    border: 1px solid var(--border-color);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 15px;
+}
+
+th, td {
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background-color: var(--color-primary);
+    color: var(--bg-white);
+    font-family: var(--fuente-titulos);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+tr:hover {
+    background-color: rgba(248, 249, FA, 0.7);
+}
+
+.precio {
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.precio-pallet {
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+/* BADGES LOGÍSTICAS */
+.badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.badge.disponible {
+    background-color: #E2F6EA;
+    color: #137333;
+}
+
+.badge.logistica {
+    background-color: #FFF0E6;
+    color: #C25100;
+}
+
+.catalogo-actions {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.btn-download {
+    display: inline-block;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid var(--color-primary);
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.btn-download:hover {
+    background-color: var(--color-primary);
+    color: var(--bg-white);
+}
+
+/* ===================================================
+   SECCIÓN CONTACTO EXPANDIDO (SIN FORMULARIO)
+   =================================================== */
+
+.contacto-section {
+    padding: 80px 5%;
+    background-color: var(--bg-light);
+}
+
+.contacto-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+}
+
+.contacto-header h2 {
+    font-family: var(--fuente-titulos);
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.contacto-header p {
+    color: var(--text-muted);
+    font-size: 16px;
+}
+
+/* Contenedor principal a pantalla completa */
+.contacto-full-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Grilla Horizontal de 3 Columnas */
+.info-grid-horizontal {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+/* Tarjetas de Información que ocupan el espacio */
+.info-card-full {
+    display: flex;
+    flex-direction: column; /* Cambiado a vertical para que se vea más corporativo */
+    align-items: center;
+    text-align: center;
+    background-color: var(--bg-white);
+    padding: 35px 25px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Quitar interactividad a las tarjetas informativas */
+.info-card-full:not(.whatsapp-card-full) {
+    pointer-events: none;
+}
+
+/* Iconos circulares más grandes y vistosos */
+.info-icon-full {
+    font-size: 26px;
+    color: var(--color-primary);
+    width: 60px;
+    height: 60px;
+    background-color: rgba(15, 44, 89, 0.05);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.info-text-full h4 {
+    font-family: var(--fuente-titulos);
+    font-size: 17px;
+    color: var(--text-main);
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.info-text-full p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+/* Tarjeta Premium de WhatsApp */
+.whatsapp-card-full {
+    border-top: 4px solid #25D366; /* Detalle verde brillante arriba */
+    background: linear-gradient(180deg, #ffffff 0%, #f7fdf9 100%);
+    cursor: pointer;
+}
+
+.whatsapp-card-full .info-icon-full {
+    background-color: #25D366;
+    color: white;
+}
+
+.whatsapp-card-full:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.2);
+}
+
+/* Redes Sociales Centradas y Estilizadas */
+.social-media-centered {
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 40px;
+}
+
+.social-media-centered h4 {
+    font-family: var(--fuente-titulos);
+    color: var(--text-main);
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.social-icons-centered {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Botones de Redes en formato horizontal con texto */
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    border-radius: 6px;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s, filter 0.2s;
+}
+
+.social-btn i {
+    font-size: 16px;
+}
+
+.social-btn.instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+.social-btn.facebook { background-color: #1877F2; }
+.social-btn.linkedin { background-color: #0A66C2; }
+
+.social-btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+}
+
+/* Diseño Responsivo para Celulares y Tablets */
+@media (max-width: 900px) {
+    .info-grid-horizontal {
+        grid-template-columns: 1fr; /* Pasa a formato lista en pantallas chicas */
+        gap: 20px;
+    }
+    .info-card-full {
+        flex-direction: row; /* En celular vuelve a ser horizontal para ahorrar espacio vertical */
+        text-align: left;
+        padding: 20px;
+    }
+    .info-icon-full {
+        margin-bottom: 0;
+        margin-right: 20px;
+        flex-shrink: 0;
+    }
+}
+/* ===================================================
+   VITRINA VIRTUAL CON ALTA VISIBILIDAD DE IMÁGENES 
+   =================================================== */
+
+/* Contenedor principal de la vitrina */
+.vitrina-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    margin: 30px 0;
+    padding: 0 15px;
+}
+
+/* Estructura base de las Tarjetas */
+.vitrina-card {
+    position: relative;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Sombra más profunda para dar relieve */
+    width: 100%;
+    max-width: 350px;
+    overflow: hidden; 
+    border-top: 4px solid var(--color-accent); /* Usamos tu naranja industrial para destacar */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Asignación de imágenes de tu carpeta local */
+.vitrina-card.bg-cervezas {
+    background-image: url('imagenes/fondo-cervezas.jpg');
+}
+
+.vitrina-card.bg-gaseosas {
+    background-image: url('imagenes/fondo-gaseosas.jpg');
+}
+
+.vitrina-card.bg-energizantes {
+    background-image: url('imagenes/fondo-energizantes.jpg');
+}
+
+/* Capa oscura traslúcida corregida: permite ver la foto sin perder legibilidad */
+.vitrina-blur-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Bajamos la opacidad y usamos un tono oscuro para contrastar con letras blancas */
+    background: rgba(15, 44, 89, 0.3); 
+    backdrop-filter: blur(2px); /* Desenfoque sutil para que los productos sigan siendo reconocibles */
+    -webkit-backdrop-filter: blur(0px);
+    z-index: 1;
+}
+
+/* Contenedor del contenido (Posicionado por encima del fondo) */
+.vitrina-content {
+    position: relative;
+    z-index: 2; 
+    padding: 35px 25px;
+    color: var(--bg-white); /* Texto general en blanco */
+}
+
+.vitrina-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(15, 44, 89, 0.25);
+}
+
+.vitrina-icon {
+    font-size: 2.8rem;
+    margin-bottom: 12px;
+    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.3));
+}
+
+.vitrina-card h3 {
+    color: var(--bg-white);
+    font-family: var(--fuente-titulos);
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.6); /* Asegura lectura sobre cualquier imagen */
+}
+
+.vitrina-marcas {
+    font-size: 0.85rem;
+    color: var(--bg-white);
+    font-weight: 700;
+    margin-bottom: 20px;
+    background: var(--color-accent); /* Fondo naranja corporativo para resaltar marcas */
+    padding: 6px 12px;
+    border-radius: 6px;
+    display: inline-block;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.vitrina-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.vitrina-features li {
+    font-size: 0.95rem;
+    color: #F1F5F9; /* Gris ultra claro/blanco para máxima legibilidad */
+    margin-bottom: 10px;
+    font-weight: 500;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Banner e indicaciones inferiores */
+.logistica-banner-mini {
+    background: var(--bg-white);
+    border-left: 4px solid #137333;
+    padding: 15px;
+    max-width: 1100px;
+    margin: 40px auto 20px auto;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.catalogo-actions {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.cta-notice {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+/* ===================================================
+   ESTILO DEL FOOTER
+   =================================================== */
+.main-footer {
+    background-color: #0b192f; /* Azul oscuro profundo alineado al tono base */
+    padding: 30px 5%;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-bottom p {
+    color: #8892b0;
+    font-size: 13px;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.5px;
+}
